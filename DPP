@@ -1,1 +1,18 @@
+1-  Subarray Sums Divisible by K
 
+
+class Solution {
+    public int subarraysDivByK(int[] nums, int k) {
+        int [] subs = new int [k];
+        subs[0] = 1;
+        int ans = 0, psum = 0;
+
+        for (int num : nums) {
+            psum += num;
+            int x = ((psum % k) + k) % k;
+            ans += subs[x];
+            subs[x]++;
+        }
+        return ans;
+    }
+}
