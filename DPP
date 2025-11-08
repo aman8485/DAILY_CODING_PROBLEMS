@@ -17,7 +17,6 @@ class Solution {
     }
 }
 
-
 2- Count Complete Subarrays in an Array
 
 class Solution {
