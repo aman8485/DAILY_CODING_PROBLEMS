@@ -54,4 +54,25 @@ class Solution {
     }
 }
 
+4- Minimum Operations to Convert All Elements to Zero
+
+class Solution {
+    public int minOperations(int[] arr) {
+        Stack<Integer> st=new Stack<>();
+        int cnt=0;
+     for(int n:arr){
+        while(!st.isEmpty() && st.peek()>n){
+            st.pop();
+        }
+        if(n==0){
+            continue;
+        }
+        if(st.isEmpty() || st.peek()<n){
+            st.push(n);
+            cnt++;
+        }
+     }
+     return cnt;
+    }
+}
 
