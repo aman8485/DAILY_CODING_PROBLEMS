@@ -77,3 +77,37 @@ class Solution {
     }
 }
 
+5-Convert Sorted List to Binary Search Tree
+
+class Solution {
+    public ListNode middle(ListNode head){
+        if(head==null) return null;
+        ListNode fast=head;
+        ListNode slow=head;
+        ListNode prev=slow;
+        while(fast!=null && fast.next!=null){
+             prev=slow;
+             slow=slow.next;
+            fast=fast.next.next;
+            
+           
+        }
+        prev.next=null;
+        return slow;
+    }
+    public TreeNode sortedListToBST(ListNode head) {
+        if(head==null) return null;
+        if(head.next==null){
+            TreeNode node=new TreeNode(head.val);
+            return node;
+        }
+        ListNode mid=middle(head);
+        TreeNode root=new TreeNode(mid.val);
+        root.left=sortedListToBST(head);
+        root.right=sortedListToBST(mid.next);
+
+        return root;
+
+        
+    }
+}
