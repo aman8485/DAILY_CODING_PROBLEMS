@@ -109,3 +109,23 @@ class Solution {
         
     }
 }
+
+6- Transform Array by Parity
+
+class Solution {
+    public int[] transformArray(int[] arr) {
+        int n=arr.length;
+        int []brr=new int[n];
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2==0){
+                brr[i]=0;
+            }else{
+                brr[i]=1;
+            }
+        }
+         Arrays.sort(brr);
+        return brr;
+        
+        
+    }
+}
