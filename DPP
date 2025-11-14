@@ -129,3 +129,34 @@ class Solution {
         
     }
 }
+
+7-  Check if Any Element Has Prime Frequency
+
+class Solution {
+    private  boolean isprime(int n){
+        if(n<=1){
+            return false;
+        }
+        for(int i=2;i<=Math.sqrt(n);i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    public boolean checkPrimeFrequency(int[] arr) {
+        HashMap<Integer,Integer> mp=new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            mp.put(arr[i],mp.getOrDefault(arr[i],0)+1);
+        }  
+        for(int i:mp.keySet()){
+
+            int freq=mp.get(i);
+            if(isprime(freq)){
+                return true;
+            }
+           
+        } 
+        return false;     
+    }
+}
