@@ -131,7 +131,6 @@ class Solution {
 }
 
 7-  Check if Any Element Has Prime Frequency
-
 class Solution {
     private  boolean isprime(int n){
         if(n<=1){
