@@ -16,7 +16,6 @@ class Solution {
         return ans;
     }
 }
-
 2- Count Complete Subarrays in an Array
 class Solution {
     public int countCompleteSubarrays(int[] nums) {
