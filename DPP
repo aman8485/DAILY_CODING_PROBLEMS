@@ -109,7 +109,6 @@ class Solution {
 }
 
 6- Transform Array by Parity
-
 class Solution {
     public int[] transformArray(int[] arr) {
         int n=arr.length;
