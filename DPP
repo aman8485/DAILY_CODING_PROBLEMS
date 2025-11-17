@@ -193,3 +193,21 @@ class Solution {
      
 }
 }
+10- Check If All 1's Are at Least Length K Places Away
+
+class Solution {
+    public boolean kLengthApart(int[] arr, int k) {
+        int pre=-1;
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==1){
+                if(pre!=-1 && i-pre-1<k){
+                    return false;
+                }
+                pre=i;
+            }
+        }
+    
+        return true;
+    }
+}
