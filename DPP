@@ -244,3 +244,26 @@ class Solution {
         return original;
     }
 }
+
+13- Largest Number At Least Twice of Others
+
+class Solution {
+    public int dominantIndex(int[] arr) {
+      int max=-1;
+      int maxidx=-1;
+      for(int i=0;i<arr.length;i++){
+       if(max<arr[i]){
+        max=arr[i];
+        maxidx=i;
+       }
+        
+      }
+      for(int i=0;i<arr.length;i++){
+        if(i!=maxidx && (max<2*arr[i])){
+            return -1;
+        }
+      }
+     
+return maxidx;
+    }
+}
