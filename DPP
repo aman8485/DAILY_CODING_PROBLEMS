@@ -229,7 +229,6 @@ class Solution {
 }
 
 12-  Keep Multiplying Found Values by Two
-
 class Solution {
     public int findFinalValue(int[] arr, int original) {
         HashSet<Integer> s =new HashSet<>();
