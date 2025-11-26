@@ -406,3 +406,40 @@ class Solution {
   return cal;
     }
 }
+
+21- Find the Difference of Two Arrays
+
+class Solution {
+    public List<List<Integer>> findDifference(int[] arr, int[] nums) {
+
+        List<List<Integer>> ans=new ArrayList<>();
+        HashSet<Integer> s=new HashSet<>();
+        HashSet<Integer> p=new HashSet<>();
+        for(int i:arr){
+            s.add(i);
+        }
+         for(int i:nums){
+            p.add(i);
+        }
+        List<Integer> a=new ArrayList<>();
+       for(int i:s){
+        if(!p.contains(i)){
+            a.add(i);
+        }
+       }
+       ans.add(a);
+
+           List<Integer> b=new ArrayList<>();
+           for(int i:p){
+            if(!s.contains(i)){
+                b.add(i);
+            }
+           }
+           ans.add(b);
+           return ans;
+
+
+       
+        
+    }
+}
