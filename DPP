@@ -534,3 +534,26 @@ class Solution {
         
     }
 }
+27- Count Partitions with Even Sum Difference
+
+class Solution {
+    public int countPartitions(int[] arr) {
+        int total=0;
+        int left=0;
+        int right=0;
+        int cnt=0;
+        for(int i=0;i<arr.length;i++){
+            total+=arr[i];
+        }
+        for(int i=0;i<arr.length-1;i++){
+            left+=arr[i];
+             right=total-left;
+             if(Math.abs(left-right)%2==0){
+                cnt++;
+             }
+        }
+       
+return cnt;
+        
+    }
+}
