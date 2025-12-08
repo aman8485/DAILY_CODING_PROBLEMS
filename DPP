@@ -12,7 +12,7 @@ class Solution {
             subs[x]++;
         }
 
-        return ans;
+return ans;
     }
 }
 
