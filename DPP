@@ -18,6 +18,7 @@ return ans;
 
 2- Count Complete Subarrays in an Array
 class Solution {
+
     public int countCompleteSubarrays(int[] nums) {
         int k = (int) Arrays.stream(nums).distinct().count(), res = 0;
         for (int i = 0; i < nums.length; i++) {
