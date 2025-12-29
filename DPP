@@ -751,3 +751,20 @@ class Solution {
       return cnt;  
     }
 }
+
+36- Count Pairs That Form a Complete Day I
+
+class Solution {
+    public int countCompleteDayPairs(int[] arr) {
+        int cnt=0;
+        for(int i=0;i<arr.length;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if((arr[i]+arr[j])%24==0){
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+        
+    }
+}
