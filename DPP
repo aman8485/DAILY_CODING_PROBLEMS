@@ -783,3 +783,39 @@ class Solution {
         return ans;
     }
 }
+
+38-  Find the Smallest Divisor Given a Threshold
+
+class Solution {
+     private int sumbyd(int[]arr,int limit){
+        int sum=0;
+        for(int i=0;i<arr.length;i++){
+            sum+=Math.ceil((double)arr[i]/(double)(limit));
+        }
+        return sum;
+
+    }
+    public int smallestDivisor(int[] arr, int limit) {
+
+           if(arr.length>limit) return -1;
+        int maxi=Integer.MIN_VALUE;
+    for(int i=0;i<arr.length;i++){
+        maxi=Math.max(arr[i],maxi);
+    }
+    int low=1;
+    int high=maxi;
+    int ans=-1;
+    while(low<=high){
+        int mid=high+(low-high)/2;
+        if(sumbyd(arr,mid)<=limit){
+            ans=mid;
+            high=mid-1;
+        }else{
+            low=mid+1;
+        }
+    }
+    return ans;
+
+        
+    }
+}
