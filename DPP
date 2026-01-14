@@ -819,3 +819,51 @@ class Solution {
         
     }
 }
+
+39- Minimum Number of Days to Make m Bouquets
+
+class Solution {
+     private boolean possibledays(int[]arr,int days,int m,int k){
+        int cnt=0;
+        int noofboookay=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<=days){
+                cnt++;
+            }else{
+                noofboookay+=(cnt/k);
+                cnt=0;
+
+            }
+
+        }
+        noofboookay+=(cnt/k);
+        return noofboookay>=m;
+    }
+    public int minDays(int[] arr, int m, int k) {
+
+         long val=(long)m*k;
+        if(val>arr.length) return -1;
+
+             int mini = Integer.MAX_VALUE, maxi = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            mini = Math.min(mini, arr[i]); 
+            maxi = Math.max(maxi, arr[i]); 
+        }
+
+        int low=mini;
+        int high=maxi;
+        int ans=-1;
+        while(low<=high){
+            int mid=high+(low-high)/2;
+            if(possibledays(arr,mid,m,k)){
+                ans=mid;
+                high=mid-1;
+            }else{
+                low=mid+1;
+            }
+        }
+
+        return ans;
+        
+    }
+}
