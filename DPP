@@ -10,6 +10,7 @@ class Solution {
             int x = ((psum % k) + k) % k;
             ans += subs[x];
             subs[x]++;
+
         }
 
 return ans;
