@@ -941,3 +941,23 @@ class Solution {
         return true;
     }
 }
+
+52-Minimize Maximum Pair Sum in Array
+
+class Solution {
+    public int minPairSum(int[] arr) {
+        Arrays.sort(arr);
+        int i=0;
+        int j=arr.length-1;
+        int maxsm=0;
+        while(i<j){
+            int pairsum=arr[i]+arr[j];
+            if(pairsum>maxsm){
+                maxsm=pairsum;
+            }
+            i++;
+            j--;
+        }
+        return maxsm;
+    }
+}
