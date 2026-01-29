@@ -4,7 +4,6 @@ class Solution {
         int [] subs = new int [k];
         subs[0] = 1;
         int ans = 0, psum = 0;
-
         for (int num : nums) {
             psum += num;
             int x = ((psum % k) + k) % k;
