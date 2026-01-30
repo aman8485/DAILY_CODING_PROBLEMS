@@ -975,3 +975,25 @@ class Solution {
         
     }
 }
+54-  Maximum Points You Can Obtain from Cards
+
+class Solution {
+    public int maxScore(int[] arr, int k) {
+        int lsum=0;
+        int maxsum=0;
+        for(int i=0;i<k;i++){
+            lsum+=arr[i];
+            maxsum=lsum;
+        }
+        int rightidx=arr.length-1;
+        int rightsum=0;
+        for(int i=k-1;i>=0;i--){
+            lsum-=arr[i];
+            rightsum+=arr[rightidx];
+            rightidx--;
+            maxsum=Math.max(maxsum,lsum+rightsum); 
+        }
+        return maxsum;
+        
+    }
+}
