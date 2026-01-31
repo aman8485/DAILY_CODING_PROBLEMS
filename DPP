@@ -997,3 +997,16 @@ class Solution {
         
     }
 }
+
+55-Find Smallest Letter Greater Than Target
+
+class Solution {
+    public char nextGreatestLetter(char[] arr, char target) {
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>target){
+                return arr[i];
+            }
+        }
+        return arr[0];
+    }
+}
