@@ -1010,3 +1010,12 @@ class Solution {
         return arr[0];
     }
 }
+
+56- Divide an Array Into Subarrays With Minimum Cost I
+
+class Solution {
+    public int minimumCost(int[] arr) {
+       Arrays.sort(arr,1,arr.length);
+       return arr[0]+arr[1]+arr[2];
+    }
+}
