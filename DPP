@@ -10,7 +10,6 @@ class Solution {
             ans += subs[x];
             subs[x]++;
     }
-
 return ans;
     }
 }
