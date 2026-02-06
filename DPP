@@ -1,5 +1,6 @@
 1-  Subarray Sums Divisible by K
 class Solution {
+
     public int subarraysDivByK(int[] nums, int k) {
         int [] subs = new int [k];
         subs[0] = 1;
