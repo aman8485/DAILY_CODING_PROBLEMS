@@ -1079,3 +1079,23 @@ class Solution {
         
     }
 }
+
+59-Minimum Removals to Balance Array
+
+class Solution {
+    public int minRemoval(int[] arr, int k) {
+      Arrays.sort(arr);
+      int l=0;
+      int maxlen=1;
+      for(int r=0;r<arr.length;r++){
+        if((long)arr[r]>(long)arr[l]*k){
+            l++;
+        }
+        maxlen=Math.max(maxlen,r-l+1);
+      }
+
+     
+return arr.length-maxlen;
+        
+    }
+}
